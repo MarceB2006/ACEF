@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@1,300&display=swap');
+
+:root {
+  --verde-principal: #01AF00;
+  --azul-oscuro: #00324C;
+  --beige: #f2f1dc;
+  --beige-claro: #FCFCE8;
+  --sombra-suave: 0 2px 5px rgba(0, 0, 0, 0.2);
+  --fuente: 'Work Sans', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--fuente);
+  background-color: var(--beige);
+  color: var(--azul-oscuro);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pantalla {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: var(--beige);
+  box-shadow: var(--sombra-suave);
+  z-index: 10;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--azul-oscuro);
+  padding: 14px 28px;
+  height: 100px;
+  width: 100vw;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.logo-img {
+  height: 170px;
+  width: auto;
+  margin-top: -50px;
+  object-fit: contain;
+}
+
+.hamburguesa {
+  font-size: 32px;
+  background-color: var(--beige-claro);
+  border: none;
+  cursor: pointer;
+  color: var(--azul-oscuro);
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+}
+
+.hamburguesa:hover {
+  background-color: #e8e6c5;
+}
+
+.menu {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  background-color: var(--beige-claro);
+  border: 1px solid var(--beige-claro);
+  box-shadow: var(--sombra-suave);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  border-radius: 4px;
+  overflow: hidden;
+  font-size: 1.25rem;
+}
+
+.menu button {
+  padding: 10px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--azul-oscuro);
+  transition: background 0.2s ease;
+}
+
+.menu button:hover {
+  background-color: rgba(0, 50, 76, 0.05);
+}
+
+.menu button i {
+  margin-right: 8px;
+}
+
+.contenido {
+  display: flex;
+  height: calc(100vh - 100px);
+  width: 1710px;
+  overflow: hidden;
+}
+
+.panel-lateral {
+  width: 250px;
+  background-color: var(--azul-oscuro);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  color: white;
+  overflow-y: auto;
+}
+
+.panel-principal {
+  flex-grow: 1;
+  padding: 40px;
+  overflow-y: auto;
+  background-color: var(--beige-claro);
+  max-height: calc(100vh - 100px);
+  width: 100%;
+  position: relative;
+}
+
+button,
+input,
+textarea,
+select {
+  transition: all 0.2s ease-in-out;
+}
+
+.boton-verde {
+  background-color: var(--verde-principal);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.boton-verde:hover {
+  background-color: #028a00;
+}
+
+.boton-verde.principal {
+  padding: 10px 16px;
+  font-size: 1.3rem;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.boton-descargar {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  padding: 10px 20px;
+  width: auto;
+  max-width: 160px;
+  z-index: 10;
+}
+
+.subir {
+  margin-top: 75px;
+}
+
+.dropdown-menu {
+  background-color: var(--beige);
+  color: var(--azul-oscuro);
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-style: italic;
+  text-align: center;
+  box-shadow: var(--sombra-suave);
+  font-size: 1.15rem;
+}
+
+.dropdown-item {
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: var(--verde-principal);
+  color: white;
+  border-radius: 4px;
+}
+
+.acta-word {
+  max-width: 794px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+  padding: 40px 60px;
+  font-size: 12pt;
+  color: #000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  min-height: 1123px;
+  page-break-inside: avoid;
+  padding-bottom: 80px;
+}
+
+.campo-acta {
+  color: var(--azul-oscuro);
+  background-color: white;
+}
+
+h1 {
+  text-align: center;
+  color: var(--verde-principal);
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  color: var(--azul-oscuro);
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  border-bottom: 2px solid var(--verde-principal);
+  padding-bottom: 5px;
+}
+
+section {
+  margin-top: 1.5rem;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+.logo-sena {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-sena img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: white;
+  box-shadow: var(--sombra-suave);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+th {
+  background-color: var(--verde-principal);
+  color: white;
+}
+
+.campo-acta {
+  color: var(--azul-oscuro);
+  background-color: white;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  font-family: var(--fuente);
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  border-color: var(--verde-principal);
+  box-shadow: 0 0 0 3px rgba(1, 175, 0, 0.2);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+table tbody tr td input,
+table tbody tr td select {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: var(--azul-oscuro);
+  font-style: italic;
+}
+
+.proteccion-datos {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  color: var(--azul-oscuro);
+  font-style: italic;
+  padding: 1rem;
+  background-color: rgba(1, 175, 0, 0.05);
+  border-left: 4px solid var(--verde-principal);
+}
+
+.boton-pequeno {
+    background-color: var(--verde-principal);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.boton-pequeno:hover {
+    background-color: #028a00;
+}
