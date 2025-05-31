@@ -1,30 +1,26 @@
-import { useState } from 'react'
-import './App.css'
+import { Routes, Route } from 'react-router-dom';
+import LoginForm from './component/Login.jsx';
+import ActaPanel from './component/Instructor/actaPanel.jsx';
+import Acta from './component/Instructor/acta.jsx';
+import Inicio from './component/coordinación/inicio.jsx';
+import Filtro from './component/coordinación/filtro.jsx';
+import Resultados from './component/coordinación/resultados.jsx';
+import TablaActas from './component/coordinación/actas.jsx';
+import Alertas from './component/coordinación/alertas.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<LoginForm />} />
+      <Route path="/instructor/actaPanel" element={<ActaPanel />} />
+      <Route path="/instructor/acta" element={<Acta />} />
+      <Route path="/coordinacion/inicio" element={<Inicio />} />
+      <Route path="/coordinacion/filtro" element={<Filtro />} />
+      <Route path="/coordinacion/resultados" element={<Resultados />} />
+      <Route path="/coordinacion/actas" element={<TablaActas />} />
+      <Route path="/coordinacion/alertas" element={<Alertas />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;

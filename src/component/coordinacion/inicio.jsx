@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { FaSignOutAlt, FaBook } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
+import { FaSignOutAlt, FaBook, FaSearch } from "react-icons/fa";
 import logo from "../../assets/logo.png";
 import "../../styles/coordinacion/inicio.css";
 
 const Inicio = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="pantalla">
@@ -23,8 +25,8 @@ const Inicio = () => {
 
       {/* Panel superior de navegación */}
       <div className="barra-navegacion">
-        <button className="btn-top">Actas</button>
-        <button className="btn-top">Alertas</button>
+        <button className="btn-top" onClick={() => navigate('/coordinacion/actas')}>Actas</button>
+        <button className="btn-top" onClick={() => navigate('/coordinacion/alertas')}>Alertas</button>
       </div>
 
       {/* Panel principal centrado */}
@@ -41,11 +43,18 @@ const Inicio = () => {
           </div>
           <div className="campo">
             <label>Ficha</label>
-            <div className="input-select">
-              <input type="text" placeholder="Selecciona ficha" />
-              <span className="flecha">▼</span>
+            <div className="input-select-con-boton">
+              <div className="input-select">
+                <input type="number" placeholder="Selecciona ficha" />
+                <span className="flecha">▼</span>
+              </div>
             </div>
           </div>
+          <button
+            className="boton-lupa"
+            onClick={() => navigate('/coordinacion/filtro')}>
+            <FaSearch />
+          </button>
         </div>
       </div>
     </div>

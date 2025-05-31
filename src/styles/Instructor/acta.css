@@ -97,6 +97,7 @@ body {
   text-align: left;
   color: var(--azul-oscuro);
   transition: background 0.2s ease;
+  font-size: 1.25rem;
 }
 
 .menu button:hover {
@@ -146,7 +147,7 @@ select {
   background-color: var(--verde-principal);
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 10px;
   font-weight: bold;
   cursor: pointer;
   border-radius: 4px;
@@ -158,7 +159,7 @@ select {
 }
 
 .boton-verde.principal {
-  padding: 10px 16px;
+  padding: 10px 10px;
   font-size: 1.3rem;
   width: 100%;
   margin-top: 50px;
@@ -177,168 +178,6 @@ select {
 .subir {
   margin-top: 75px;
 }
-
-.dropdown-menu {
-  background-color: var(--beige);
-  color: var(--azul-oscuro);
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  font-style: italic;
-  text-align: center;
-  box-shadow: var(--sombra-suave);
-  font-size: 1.15rem;
-}
-
-.dropdown-item {
-  margin: 10px 0;
-  cursor: pointer;
-}
-
-.dropdown-item:hover {
-  background-color: var(--verde-principal);
-  color: white;
-  border-radius: 4px;
-}
-
-.acta-word {
-  max-width: 794px;
-  width: 100%;
-  margin: 0 auto;
-  background-color: white;
-  padding: 40px 60px;
-  font-size: 12pt;
-  color: #000;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  min-height: 1123px;
-  page-break-inside: avoid;
-  padding-bottom: 80px;
-}
-
-.campo-acta {
-  color: var(--azul-oscuro);
-  background-color: white;
-}
-
-h1 {
-  text-align: center;
-  color: var(--verde-principal);
-  margin-bottom: 1.5rem;
-}
-
-h2 {
-  color: var(--azul-oscuro);
-  margin-top: 2rem;
-  font-size: 1.4rem;
-  border-bottom: 2px solid var(--verde-principal);
-  padding-bottom: 5px;
-}
-
-section {
-  margin-top: 1.5rem;
-}
-
-p {
-  margin: 0.5rem 0;
-}
-
-.logo-sena {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo-sena img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-  background-color: white;
-  box-shadow: var(--sombra-suave);
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-th, td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
-  font-size: 0.95rem;
-}
-
-th {
-  background-color: var(--verde-principal);
-  color: white;
-}
-
-.campo-acta {
-  color: var(--azul-oscuro);
-  background-color: white;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="date"],
-textarea,
-select {
-  width: 100%;
-  padding: 6px 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-top: 6px;
-  margin-bottom: 12px;
-  font-family: var(--fuente);
-}
-
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-  border-color: var(--verde-principal);
-  box-shadow: 0 0 0 3px rgba(1, 175, 0, 0.2);
-  outline: none;
-}
-
-textarea {
-  resize: vertical;
-  min-height: 80px;
-}
-
-table tbody tr td input,
-table tbody tr td select {
-  width: 100%;
-  padding: 6px 8px;
-  font-size: 0.9rem;
-  border-radius: 3px;
-  border: 1px solid #ccc;
-  text-align: left;
-}
-
-footer {
-  text-align: center;
-  margin-top: 3rem;
-  font-size: 0.9rem;
-  color: var(--azul-oscuro);
-  font-style: italic;
-}
-
-.proteccion-datos {
-  margin-top: 2rem;
-  font-size: 0.95rem;
-  color: var(--azul-oscuro);
-  font-style: italic;
-  padding: 1rem;
-  background-color: rgba(1, 175, 0, 0.05);
-  border-left: 4px solid var(--verde-principal);
-}
-
 .boton-pequeno {
     background-color: var(--verde-principal);
     color: white;
@@ -357,4 +196,111 @@ footer {
 
 .boton-pequeno:hover {
     background-color: #028a00;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  padding: 20px;
+}
+.container {
+  background: white;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #000;
+  padding-bottom: 10px;
+}
+.header .title {
+  text-align: center;
+  flex: 1;
+  font-size: 20px;
+  font-weight: bold;
+}
+h2 {
+  font-size: 18px;
+  padding: 8px;
+  margin-top: 20px;
+  page-break-before: always;
+  color: black;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  page-break-inside: avoid;
+}
+th, td {
+  border: 1px solid #444;
+  padding: 8px;
+  text-align: left;
+  color: black;
+}
+
+tr, td {
+  page-break-inside: avoid;
+  color: black;
+}
+
+p {
+  color: black;
+}
+
+input[type="text"], textarea {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  padding: 4px;
+}
+textarea {
+  resize: vertical;
+}
+footer {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 30px;
+}
+
+/* style.css */
+@media print {
+  /* Hace que tu contenedor ocupe exactamente un A4 vertical */
+  #acta {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    padding: 5mm;         /* pequeño margen interno */
+    box-sizing: border-box;
+  }
+}
+
+@media print {
+  /* Antes de cada sección, fuerza salto de página */
+  h2 {
+    page-break-before: always;
+    margin-top: 0;
+  }
+
+  /* Evita partir tablas entre páginas */
+  table, tr, td, th {
+    page-break-inside: avoid;
+  }
+}
+
+.container table {
+  border: 1px solid #444;
+}
+
+h2 {
+  background: #e0e0e0;
+  padding: 8px;
 }

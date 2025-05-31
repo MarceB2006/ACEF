@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { FaSignOutAlt, FaBook } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 import logo from "../../assets/logo.png";
 import "../../styles/instructor/actaPanel.css";
 
 const ActaPanel = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const navigate = useNavigate(); 
 
   const handleUploadClick = () => {
     window.open('/subir-acta', '_blank');
@@ -37,15 +38,13 @@ const ActaPanel = () => {
       <div className="contenido">
         <div className="panel-lateral">
           <div className="dropdown">
-            <button className="boton-verde" onClick={() => setDropdownOpen(!dropdownOpen)}>
-              Llenar acta ▼
+            <button
+              className="boton-verde"
+              onClick={() => navigate('/Instructor/acta')}
+            >
+              Llenar acta 
             </button>
-            {dropdownOpen && (
-              <div className="dropdown-menu">
-                <div className="dropdown-item">Acta individual</div>
-                <div className="dropdown-item">Acta general</div>
-              </div>
-            )}
+
           </div>
 
           <button className="boton-verde subir" onClick={handleUploadClick}>
