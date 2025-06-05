@@ -127,10 +127,15 @@ const Acta = () => {
     }).then(canvas => {
       const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF('p', 'mm', 'a4');
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
-      const totalPages = Math.ceil(pdfHeight / pdf.internal.pageSize.getHeight());
+      const margin = 2;
+      const pdfPageWidth = pdf.internal.pageSize.getWidth();
+      const pdfPageHeight = pdf.internal.pageSize.getHeight();
+
+      const usableWidth = pdfPageWidth - margin * 2;
+      const usableHeight = (canvas.height * usableWidth) / canvas.width;
+
+      const totalPages = Math.ceil(usableHeight / pdfPageHeight);
       let position = 0;
 
       for (let i = 0; i < totalPages; i++) {
@@ -138,15 +143,15 @@ const Acta = () => {
         pdf.addImage(
           imgData,
           'PNG',
-          0,
-          -position,
-          pdfWidth,
-          pdfHeight
+          margin,
+          -position + margin,
+          usableWidth,
+          usableHeight
         );
-        position += pdf.internal.pageSize.getHeight();
+        position += pdfPageHeight;
       }
 
-      pdf.save("acta_general.pdf");
+      pdf.save("acta.pdf");
     }).catch(err => {
       console.error("Error al generar el PDF:", err);
     });

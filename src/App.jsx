@@ -2,11 +2,11 @@ import { Routes, Route } from 'react-router-dom';
 import LoginForm from './component/Login.jsx';
 import ActaPanel from './component/Instructor/actaPanel.jsx';
 import Acta from './component/Instructor/acta.jsx';
-import Inicio from './component/coordinación/inicio.jsx';
-import Filtro from './component/coordinación/filtro.jsx';
-import Resultados from './component/coordinación/resultados.jsx';
-import TablaActas from './component/coordinación/actas.jsx';
-import Alertas from './component/coordinación/alertas.jsx';
+import Inicio from './component/coordinacion/inicio.jsx';
+import Filtro from './component/coordinacion/filtro.jsx';
+import Resultados from './component/coordinacion/resultados.jsx';
+import TablaActas from './component/coordinacion/actas.jsx';
+import Alertas from './component/coordinacion/alertas.jsx';
 
 function App() {
   return (

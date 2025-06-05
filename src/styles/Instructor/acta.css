@@ -116,7 +116,7 @@ body {
 }
 
 .panel-lateral {
-  width: 250px;
+  width: 275px;
   background-color: var(--azul-oscuro);
   padding: 20px;
   display: flex;
@@ -147,22 +147,18 @@ select {
   background-color: var(--verde-principal);
   color: white;
   border: none;
-  padding: 10px 10px;
+  padding: 12px 12px;
   font-weight: bold;
   cursor: pointer;
   border-radius: 4px;
   transition: background 0.3s ease;
+  font-size: 1.25rem;
+  width: 100%;
+  margin-top: 25px;
 }
 
 .boton-verde:hover {
   background-color: #028a00;
-}
-
-.boton-verde.principal {
-  padding: 10px 10px;
-  font-size: 1.3rem;
-  width: 100%;
-  margin-top: 50px;
 }
 
 .boton-descargar {
@@ -178,6 +174,7 @@ select {
 .subir {
   margin-top: 75px;
 }
+
 .boton-pequeno {
     background-color: var(--verde-principal);
     color: white;

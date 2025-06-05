@@ -55,11 +55,12 @@ body {
 .input-group {
   display: flex;
   flex-direction: column;
+  color: black;
 }
 
 .label {
   margin-bottom: 6px;
-  color: #495057;
+  color: black;
   font-size: 1em;
   font-weight: 500;
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaSignOutAlt, FaBook } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import logo from "../../assets/logo.png";
-import "../../styles/instructor/actaPanel.css";
+import "../../styles/Instructor/acta.css";
 
 const ActaPanel = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,6 +10,14 @@ const ActaPanel = () => {
 
   const handleUploadClick = () => {
     window.open('/subir-acta', '_blank');
+  };
+
+  const handleLogout = () => {
+    console.log("Cerrar sesión");
+  };
+
+  const handleManual = () => {
+    console.log("Abrir manual");
   };
 
   return (
@@ -20,11 +28,11 @@ const ActaPanel = () => {
         </button>
         {menuOpen && (
           <div className="menu">
-            <button>
+            <button onClick={handleLogout}>
               <FaSignOutAlt style={{ marginRight: "8px" }} />
               Cerrar sesión
             </button>
-            <button>
+            <button onClick={handleManual}>
               <FaBook style={{ marginRight: "8px" }} />
               Manual
             </button>
@@ -36,21 +44,22 @@ const ActaPanel = () => {
       </header>
 
       <div className="contenido">
-        <div className="panel-lateral">
-          <div className="dropdown">
-            <button
-              className="boton-verde"
-              onClick={() => navigate('/Instructor/acta')}
-            >
-              Llenar acta 
-            </button>
-
-          </div>
-
-          <button className="boton-verde subir" onClick={handleUploadClick}>
+        <aside className="panel-lateral">
+          <button
+            type="button"
+            className="boton-verde"
+            onClick={() => navigate('/Instructor/acta')}
+          >
+            Llenar acta
+          </button>
+          <button
+            type="button"
+            className="boton-verde subir"
+            onClick={handleUploadClick}
+          >
             Subir acta
           </button>
-        </div>
+        </aside>
 
         <div className="panel-principal">
           {/* Aquí se muestra el contenido del acta */}
