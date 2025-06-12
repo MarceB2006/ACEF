@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/LoginForm.css';
 import logo from '../assets/logo.png';
-import { login } from '../services/loginService'; 
 
 function LoginForm() {
   const [role, setRole] = useState('');
@@ -10,23 +9,13 @@ function LoginForm() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
-    try {
-      const data = await login({ username, password });
-      console.log('Usuario autenticado:', data);
-
-      if (role === 'instructor') {
-        navigate('/instructor/acta');
-      } else if (role === 'coordinador') {
-        navigate('/coordinacion/inicio');
-      } else {
-        alert('Por favor selecciona un rol válido');
-      }
-    } catch (error) {
-      console.error('Error de login:', error.response?.data || error.message);
-      alert('Usuario o contraseña incorrectos');
+    if (role === 'instructor') {
+      navigate('/instructor/acta');
+    } else if (role === 'coordinador') {
+      navigate('/coordinacion/inicio');
     }
   };
 
