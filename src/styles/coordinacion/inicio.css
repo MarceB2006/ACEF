@@ -111,6 +111,7 @@ html, body {
   padding: 20px 0;
   box-shadow: var(--sombra-suave);
   border-bottom: 1.5px solid rgba(128, 128, 128, 0.15);
+  width: 100%;
 }
 
 /* Botones del menú superior */

@@ -4,6 +4,8 @@ import html2canvas from 'html2canvas';
 import { FaSignOutAlt, FaBook } from "react-icons/fa";
 import logo from "../../assets/logo.png";
 import "../../styles/instructor/acta.css";
+import SubirActa from "../../component/Instructor/subir";
+
 
 function crearFilaAprendices(tbody, index) {
   const row = document.createElement('tr');
@@ -61,6 +63,7 @@ function subirActa() {
 const Acta = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [htmlContent, setHtmlContent] = useState("");
+  const [modalAbierto, setModalAbierto] = useState(false);
   const actaRef = useRef(null);
 
   useEffect(() => {
@@ -105,21 +108,12 @@ const Acta = () => {
     }
   };
 
-  const handleUploadClick = () => {
-    try {
-      subirActa();
-      window.open('/subir-acta', '_blank');
-    } catch (error) {
-      console.error("Error en subirActa:", error);
-    }
-  };
-
   const handleDownloadPDF = () => {
     const input = actaRef.current;
     if (!input) {
       console.error("No se encontró el contenedor del acta.");
       return;
-    }
+    }   
 
     html2canvas(input, {
       scale: 2,
@@ -182,22 +176,6 @@ const Acta = () => {
       </header>
 
       <div className="contenido">
-        <aside className="panel-lateral">
-          <button
-            type="button"
-            className="boton-verde"
-            onClick={handleFillActa}
-          >
-            Llenar acta
-          </button>
-          <button
-            type="button"
-            className="boton-verde subir"
-            onClick={handleUploadClick}
-          >
-            Subir acta
-          </button>
-        </aside>
 
         <main className="panel-principal">
           <div
@@ -206,14 +184,28 @@ const Acta = () => {
             dangerouslySetInnerHTML={{ __html: htmlContent }}
           />
           <div>
+
+            <button
+            type="button"
+            className="boton-verde"
+            onClick={() => setModalAbierto(true)}
+          >
+            Subir acta
+          </button>
+
             <button
               type="button"
-              className="boton-verde boton-descargar-pdf"
+              className="boton-verde"
               onClick={handleDownloadPDF}
             >
               Descargar
             </button>
           </div>
+
+          {modalAbierto && (
+            <SubirActa onClose={() => setModalAbierto(false)} />
+          )}
+          
         </main>
       </div>
     </div>

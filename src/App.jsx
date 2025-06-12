@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
 import LoginForm from './component/Login.jsx';
-import ActaPanel from './component/Instructor/actaPanel.jsx';
 import Acta from './component/Instructor/acta.jsx';
 import Inicio from './component/coordinacion/inicio.jsx';
 import Filtro from './component/coordinacion/filtro.jsx';
@@ -12,7 +11,6 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<LoginForm />} />
-      <Route path="/instructor/actaPanel" element={<ActaPanel />} />
       <Route path="/instructor/acta" element={<Acta />} />
       <Route path="/coordinacion/inicio" element={<Inicio />} />
       <Route path="/coordinacion/filtro" element={<Filtro />} />

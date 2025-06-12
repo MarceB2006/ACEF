@@ -111,19 +111,8 @@ body {
 .contenido {
   display: flex;
   height: calc(100vh - 100px);
-  width: 1710px;
+  width: 100%;
   overflow: hidden;
-}
-
-.panel-lateral {
-  width: 275px;
-  background-color: var(--azul-oscuro);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 45px;
-  color: white;
-  overflow-y: auto;
 }
 
 .panel-principal {
@@ -147,52 +136,25 @@ select {
   background-color: var(--verde-principal);
   color: white;
   border: none;
-  padding: 12px 12px;
+  padding: 12px 24px;
   font-weight: bold;
   cursor: pointer;
   border-radius: 4px;
   transition: background 0.3s ease;
-  font-size: 1.25rem;
-  width: 100%;
-  margin-top: 25px;
+  font-size: 1.1rem;
+  min-width: 150px;
+  margin-bottom: 10px;
 }
 
 .boton-verde:hover {
   background-color: #028a00;
 }
 
-.boton-descargar {
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
-  padding: 10px 20px;
-  width: auto;
-  max-width: 160px;
-  z-index: 10;
-}
-
-.subir {
-  margin-top: 75px;
-}
-
-.boton-pequeno {
-    background-color: var(--verde-principal);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    font-size: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.2s ease;
-}
-
-.boton-pequeno:hover {
-    background-color: #028a00;
+.botones-acta {
+  display: flex;
+  gap: 24px;
+  margin-top: 30px;
+  flex-wrap: wrap;
 }
 
 
@@ -223,10 +185,10 @@ body {
 }
 h2 {
   font-size: 18px;
+  background: #e0e0e0;
   padding: 8px;
   margin-top: 20px;
   page-break-before: always;
-  color: black;
 }
 table {
   width: 100%;
@@ -238,16 +200,9 @@ th, td {
   border: 1px solid #444;
   padding: 8px;
   text-align: left;
-  color: black;
 }
-
 tr, td {
   page-break-inside: avoid;
-  color: black;
-}
-
-p {
-  color: black;
 }
 
 input[type="text"], textarea {

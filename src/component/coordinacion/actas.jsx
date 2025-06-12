@@ -32,6 +32,7 @@ const TablaActas = ({ actas }) => {
         </div>
       </header>
 
+      <div className="contenido">
       <div className="search-section">
           <label htmlFor="ficha" className="search-label">Ficha:</label>
           <input type="number" id="ficha" className="search-input" />
@@ -73,6 +74,7 @@ const TablaActas = ({ actas }) => {
           )}
         </tbody>
       </table>
+    </div>
     </div>
   );
 };

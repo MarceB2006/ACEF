@@ -97,6 +97,15 @@ html, body {
   margin-top: 10px;
 }
 
+.contenido {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: white;
+  margin: 0;
+}
+
 .alertas-main {
   padding: 30px 20px;
   flex: 1;

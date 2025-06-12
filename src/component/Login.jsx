@@ -14,7 +14,7 @@ function LoginForm() {
     console.log('Iniciar sesión con:', { role, username, password });
 
     if (role === 'instructor') {
-      navigate('/instructor/actaPanel');
+      navigate('/instructor/acta');
     } else if (role === 'coordinador') {
       navigate('/coordinacion/inicio');
     } else {

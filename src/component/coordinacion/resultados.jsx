@@ -73,14 +73,18 @@ const Resultados = () => {
         </div>
       </header>
 
+      <div className="contenido">
       <div className="filtros">
-        <button className="dropdown">Trimestre ▼</button>
-        <button className="dropdown">Competencia ▼</button>
-        <button className="dropdown">R.A ▼</button>
-        <button className="boton-lupa" onClick={() => console.log("Buscar ficha")}>
-          <FaSearch />
-        </button>
-      </div> {/* CIERRE DEL DIV FILTROS */}
+        <div className="grupo-dropdowns">
+          <button className="dropdown">Competencia ▼</button>
+          <button className="dropdown">R.A ▼</button>
+        </div>
+        <div className="grupo-boton">
+          <button className="boton-lupa" onClick={() => navigate('/coordinacion/resultados')}>
+            <FaSearch />
+          </button>
+        </div>
+       </div>
 
       <div className="info">
         <p><strong>Programa:</strong>{info.programa}</p>
@@ -89,6 +93,7 @@ const Resultados = () => {
         <p><strong>Competencia:</strong> {info.competencia}</p>
         <p><strong>R.A:</strong>{info.resultadoAprendizaje}</p>
       </div>
+      
 
       <table className="tabla-aprendices">
         <thead>
@@ -108,6 +113,7 @@ const Resultados = () => {
           ))}
         </tbody>
       </table>
+    </div>
     </div>
   );
 };

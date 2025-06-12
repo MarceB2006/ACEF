@@ -42,13 +42,18 @@ const Filtros = () => {
         </div>
       </header>
 
-      <div className="filtros">
-        <button className="dropdown">Trimestre ▼</button>
-        <button className="dropdown">Competencia ▼</button>
-        <button className="dropdown">R.A ▼</button>
-        <button className="boton-lupa" onClick={() => navigate('/coordinacion/resultados')}>
-          <FaSearch />
-        </button>
+      <div className="contenido">
+        <div className="filtros">
+          <div className="grupo-dropdowns">
+            <button className="dropdown">Competencia ▼</button>
+            <button className="dropdown">R.A ▼</button>
+          </div>
+          <div className="grupo-boton">
+            <button className="boton-lupa" onClick={() => navigate('/coordinacion/resultados')}>
+              <FaSearch />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
